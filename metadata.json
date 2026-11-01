@@ -1,0 +1,6 @@
+{
+  "name": "RoboTrack - Robotics Mission Control & Fleet Management",
+  "description": "Intelligent robotics fleet management, mission dispatch, telemetry monitoring, testing lab, component inventory, and analytics platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

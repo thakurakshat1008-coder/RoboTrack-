@@ -1,0 +1,158 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-display: 'Chakra Petch', 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-tech: 'Chakra Petch', monospace;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Curated Luxury & Earthy Pastel Palette */
+    --color-champagne: #EADCC9;
+    --color-champagne-light: #F4EDE4;
+    --color-alabaster: #FAF7F2;
+    --color-greige: #E5DFD7;
+    --color-greige-dark: #6E6659;
+    --color-rose-gold: #E8B4A2;
+    --color-bright-skies: #82B2D8;
+    --color-sage: #849B74;
+    --color-buttercream: #F3DC9B;
+    --color-lavender: #A99DC9;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  /* Dark mode default - Deep obsidian with warm champagne & celestial highlights */
+  html.dark body {
+    background-color: #0A0D14;
+    color: #FAF7F2;
+  }
+
+  /* Light mode - Alabaster / Champagne ivory canvas with soft greige structures */
+  html:not(.dark) body {
+    background-color: #FAF7F2;
+    color: #26211B;
+  }
+}
+
+.font-tech {
+  font-family: var(--font-tech);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Custom scrollbars with warm champagne greige styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #0A0D14;
+}
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #F4EDE4;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #252A36;
+  border-radius: 3px;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #D8D1C7;
+  border-radius: 3px;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #384255;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #B8B0A2;
+}
+
+/* Animated moving grid background with soft champagne / skies phosphor lines */
+.animated-grid {
+  background-size: 36px 36px;
+  animation: moveGrid 24s linear infinite;
+}
+
+html.dark .animated-grid {
+  background-image: 
+    linear-gradient(to right, rgba(130, 178, 216, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(234, 220, 201, 0.04) 1px, transparent 1px);
+}
+
+html:not(.dark) .animated-grid {
+  background-image: 
+    linear-gradient(to right, rgba(74, 136, 183, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(197, 168, 128, 0.09) 1px, transparent 1px);
+}
+
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 36px 36px;
+  }
+}
+
+/* Authentic Engineering Blueprint Grid Pattern */
+.blueprint-cad-grid {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(74, 136, 183, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(74, 136, 183, 0.12) 1px, transparent 1px);
+}
+
+html.dark .blueprint-cad-grid {
+  background-color: #070E1A;
+  background-image: 
+    linear-gradient(to right, rgba(130, 178, 216, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(130, 178, 216, 0.15) 1px, transparent 1px);
+}
+
+html:not(.dark) .blueprint-cad-grid {
+  background-color: #F1F6FA;
+  background-image: 
+    linear-gradient(to right, rgba(74, 136, 183, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(74, 136, 183, 0.18) 1px, transparent 1px);
+}
+
+/* Radar rotation */
+.radar-sweep {
+  animation: radarRotate 4s linear infinite;
+}
+
+@keyframes radarRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pulsing blueprint node marker */
+@keyframes blueprintPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(232, 180, 162, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(232, 180, 162, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(232, 180, 162, 0);
+  }
+}
+
+.blueprint-pulse {
+  animation: blueprintPulse 2.4s infinite cubic-bezier(0.66, 0, 0, 1);
+}
